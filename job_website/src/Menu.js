@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, IconButton, Avatar, Box, Menu, MenuItem } from '@mui/material';
 
+
 const settings = ['Account', 'Logout'];
 
 function MenuComponent() {
@@ -12,7 +13,7 @@ function MenuComponent() {
         setAnchorElUser(null);
     };
     return (
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' , width: '100%' }}>
             <div style={{ margin: 'auto' }}>
