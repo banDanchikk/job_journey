@@ -3,11 +3,11 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
 from auth.base_config import auth_backend, fastapi_users
-from src.config import SECRET_KEY
-from src.schemas.user_schemas import UserRead, UserCreate
+from backend.src.config import SECRET_KEY
+from backend.src.schemas.user_schemas import UserRead, UserCreate
 
-from src.routers.employee_router import router as employee_router
-from src.routers.employer_router import router as employer_router
+from backend.src.routers.employee_router import router as employee_router
+from backend.src.routers.employer_router import router as employer_router
 
 app = FastAPI(
     title="Job Journey"
@@ -52,4 +52,4 @@ app.include_router(employee_router)
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, port=8000)
+    uvicorn.run(app, port=8001)

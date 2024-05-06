@@ -4,14 +4,15 @@ from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, Query
 from sqlalchemy import insert, select, and_, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.utils.acc_utils import check_role, get_cv_path_to_delete, update_account_filling
-from src.auth.base_config import fastapi_users
-from src.models.user_models import User, CV, SocialLink
-from src.database import get_async_session
-from src.user.role_enum import RoleEnum
-from src.utils.acc_utils import save_cv_locally
+from backend.src.utils.acc_utils import check_role, get_cv_path_to_delete, update_account_filling, get_all_cv, \
+    get_all_social_links
+from backend.src.auth.base_config import fastapi_users
+from backend.src.models.user_models import User, CV, SocialLink
+from backend.src.database import get_async_session
+from backend.src.user.role_enum import RoleEnum
+from backend.src.utils.acc_utils import save_cv_locally
 
-from src.routers.acc_base_router import router as base_router
+from backend.src.routers.acc_base_router import router as base_router
 
 import os
 
@@ -19,24 +20,49 @@ router = APIRouter()
 
 router.include_router(base_router)
 
+
+@router.get("/")
+async def account(
+        current_user: User = Depends(fastapi_users.current_user()),
+        session: AsyncSession = Depends(get_async_session)
+):
+    await check_role(RoleEnum.EMPLOYEE, current_user)
+
+    user_data = dict()
+
+    user_data['info'] = [{
+        'email': current_user.email,
+        'username': current_user.username,
+        'date_of_birth': current_user.date_of_birth,
+        'city': current_user.city,
+        'phone_number': current_user.phone_number,
+        'avatar': current_user.avatar,
+        'acc_filling': current_user.acc_filling
+    }]
+
+    user_data['cv'] = await get_all_cv(current_user, session)
+    user_data['social_links'] = await get_all_social_links(current_user, session)
+
+    return user_data
+
+
 @router.put("/update-profile")
 async def update_user_profile(
         username: str = Query(None),
         email: str = Query(None),
-        password: str = Query(None),
         date_of_birth: datetime = Query(None),
         city: str = Query(None),
         phone_number: str = Query(None),
         current_user: User = Depends(fastapi_users.current_user()),
         session: AsyncSession = Depends(get_async_session)
 ):
+    await check_role(RoleEnum.EMPLOYEE, current_user)
+
     user_data = {}
     if username:
         user_data['username'] = username
     if email:
         user_data['email'] = email
-    if password:
-        user_data['password'] = password
     if date_of_birth:
         user_data['date_of_birth'] = date_of_birth
     if city:
@@ -52,7 +78,6 @@ async def update_user_profile(
     await session.commit()
 
     return {'result': 'nisichy'}
-
 
 
 @router.post("/upload-cv")
@@ -107,36 +132,3 @@ async def delete_cv(
     await session.commit()
 
     return {"message": "Резюме успішно видалено"}
-
-@router.post("/add-social-links")
-async def add_social_links(
-    social_name: str,
-    social_link: str,
-    current_user: User = Depends(fastapi_users.current_user()),
-    session: AsyncSession = Depends(get_async_session)
-):
-    data = dict()
-    data["user_id"] = current_user.id
-    data["social_name"] = social_name
-    data["social_link"] = social_link
-
-    stmt = insert(SocialLink).values(**data)
-    await session.execute(stmt)
-    await session.commit()
-    return {"status": "success"}
-
-
-@router.delete("/delete-social-links/{social_link_id}")
-async def delete_social_links(
-    social_link_id: int,
-    current_user: User = Depends(fastapi_users.current_user()),
-    session: AsyncSession = Depends(get_async_session)
-):
-    await check_role(RoleEnum.EMPLOYEE, current_user)
-
-    stmt = delete(SocialLink).where(SocialLink.id == social_link_id)
-    await session.execute(stmt)
-    await session.commit()
-
-    return {"message": "Соціальна мережа успішно видалена"}
-

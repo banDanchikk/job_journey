@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from src.routers.vacancy_employee_router import router as vacancy_router
-from src.routers.acc_employee_router import router as account_router
-from src.routers.saved_vacancies_router import router as saved_vacancies_router
+from backend.src.routers.vacancy_employee_router import router as vacancy_router
+from backend.src.routers.acc_employee_router import router as account_router
+from backend.src.routers.saved_vacancies_router import router as saved_vacancies_router
 
 router = APIRouter(
     prefix="/employee",

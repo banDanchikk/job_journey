@@ -1,10 +1,10 @@
 from datetime import datetime
 
 from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
-from sqlalchemy import Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean, Date
+from sqlalchemy import Column, Integer, String, TIMESTAMP, ForeignKey, Boolean, Date
 from sqlalchemy.orm import relationship
 
-from src.database import Base
+from backend.src.database import Base
 
 
 class Role(Base):
@@ -24,10 +24,11 @@ class User(SQLAlchemyBaseUserTable[int], Base):
     date_of_birth = Column(Date)
     city = Column(String)
     phone_number = Column(String)
+    company_name = Column(String)
     avatar = Column(String)
     acc_filling = Column(String)
     registered_at = Column(TIMESTAMP, default=datetime.utcnow)
-    role_id = Column(Integer, ForeignKey(Role.id), default=3)
+    role_id = Column(Integer, ForeignKey(Role.id), default=2)
     is_active: bool = Column(Boolean, default=True, nullable=False)
     is_superuser: bool = Column(Boolean, default=False, nullable=False)
     is_verified: bool = Column(Boolean, default=False, nullable=False)

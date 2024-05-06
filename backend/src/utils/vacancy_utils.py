@@ -1,6 +1,6 @@
 from typing import List
 
-from src.models.vacancy_models import Vacancy
+from backend.src.models.vacancy_models import Vacancy
 
 
 def convert_into_json_vacancy(data: List[List[Vacancy]]):

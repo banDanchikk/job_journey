@@ -5,10 +5,10 @@ from fastapi import Depends, UploadFile
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.auth.base_config import fastapi_users
-from src.database import get_async_session
-from src.models.user_models import User, CV, SocialLink
-from src.user.role_enum import RoleEnum
+from backend.src.auth.base_config import fastapi_users
+from backend.src.database import get_async_session
+from backend.src.models.user_models import User, CV, SocialLink
+from backend.src.user.role_enum import RoleEnum
 
 
 async def check_role(
@@ -83,6 +83,7 @@ async def get_all_cv(
     cv_data = [list(row) for row in cv_result]
 
     return cv_data
+
 
 async def get_all_social_links(
     current_user: User = Depends(fastapi_users.current_user()),

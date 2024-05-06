@@ -3,8 +3,8 @@ from datetime import datetime
 from sqlalchemy import Column, Integer, String, ForeignKey, TIMESTAMP, Boolean
 from sqlalchemy.orm import relationship
 
-from src.models.user_models import User
-from src.database import Base
+from backend.src.models.user_models import User
+from backend.src.database import Base
 
 
 class Vacancy(Base):
@@ -41,6 +41,7 @@ class VacanciesWithCV(Base):
     id = Column(Integer, primary_key=True)
     vacancy_id = Column(Integer, ForeignKey(Vacancy.id))
     user_id = Column(Integer, ForeignKey(User.id))
+    cv_path = Column(String)
 
     user = relationship("User", backref="vacancies_with_cv")
     vacancy = relationship("Vacancy", backref="vacancies_with_cv")
