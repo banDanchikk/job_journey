@@ -7,6 +7,7 @@ import Saved from './pages/Saved'
 import Registration from './pages/Registration';
 import UserAccount from './pages/UserAccount';
 import EditUserInfo from './pages/EditUserInfo';
+import Login from './pages/Login';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/registration" element = {<Registration/>} />
           <Route path="/account" element = {<UserAccount/>} />
           <Route path="/edituser" element = {<EditUserInfo/>} />
+          <Route path="/login" element = {<Login/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,4 +1,4 @@
-import { Typography, Card, CardContent, CardMedia } from "@mui/material";
+import { Typography} from "@mui/material";
 import Menu from '../components/Menu';
 import Bottom from '../components/Bottom';
 import CatCard from "../components/CatCard";
