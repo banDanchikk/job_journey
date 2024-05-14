@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function CatCard({ categoryName, numOfJobs }) {
     return (
-        <Link to={`/saved`} style={{ textDecoration: 'none' }}>
+        <Link to={`/vacancies`} style={{ textDecoration: 'none' }}>
             <Card variant="outlined" style={{ marginRight: '2em', backgroundColor: 'white', width: '10em'}}>
                 <ImageIcon style={{ fontSize: '5em', color: 'black', fontWeight: 'lighter' }} />
                 <CardContent>
