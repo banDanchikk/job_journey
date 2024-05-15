@@ -9,7 +9,7 @@ export default function EmployerAccount() {
             <Menu />
             <div style={{marginLeft:'9em', marginTop:'3em'}}>
                 <div style={{display: 'flex', flexDirection: 'row', alignContent: 'center'}}>
-                    <div style={{ borderRadius: '15px', display: 'flex', flexDirection: 'row', alignItems: 'center', paddingLeft:'3em', paddingRight:'3em',padding: '1em', backgroundColor: 'white', marginTop: '6em', width: '80%', height: '4em', marginLeft: '2em'}}>
+                    <div style={{ borderRadius: '15px', display: 'flex', flexDirection: 'row', alignItems: 'center', paddingLeft:'3em', paddingRight:'4em', padding: '1em', backgroundColor: 'white', marginTop: '6em', width: '81%', height: '4em', marginLeft: '2em'}}>
                         <div style={{ width: '50%'}}>
                             <Typography style={{ fontSize: '2em', fontWeight: 'bold' }}>Company Name</Typography>
                         </div>

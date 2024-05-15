@@ -10,6 +10,10 @@ import EditUserInfo from './pages/EditUserInfo';
 import Vacancies from './pages/Vacancies';
 import Login from './pages/Login';
 import EmployerAccount from './pages/EmployerAccount';
+import CreateVacancie from './pages/CreateVacancie';
+import ViewVacanciesEmpl from './pages/VievVacEmpl';
+import ViewVacSearcher from './pages/VievVacSercher';
+
 function App() {
   return (
     <div>
@@ -25,6 +29,9 @@ function App() {
           <Route path="/login" element = {<Login/>} />
           <Route path="/vacancies" element = {<Vacancies/>} />
           <Route path="/empacc" element = {<EmployerAccount/>}/>
+          <Route path="/crvac" element = {<CreateVacancie/>}/>
+          <Route path="/vivaempl" element = {<ViewVacanciesEmpl/>}/>
+          <Route path="/vivaserch" element = {<ViewVacSearcher/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -61,9 +61,9 @@ export default function EditUserInfo() {
                         </IconButton>
                     </div>
                 ))}
-                <Button onClick={handleAddLink} style={{ marginTop: '1em', color: 'rgba(68, 202, 146, 1)', fontWeight: 'bold', fontSize: '1em', width:'8%'}}>Add Link</Button>
+                <Button onClick={handleAddLink} style={{ marginTop: '1em', color: 'rgba(68, 202, 146, 1)', fontWeight: 'bold', fontSize: '1em', width:'10%'}}>Add Link</Button>
                 <div style={{display: 'flex', justifyContent: 'space-between', width:'20%'}}>
-                    <Button variant="contained" style={{ boxShadow: 'none', width: '9em', height: '3em', borderRadius: '100px', backgroundColor: '#44CA92', fontWeight: 'bold', marginTop: '1em' }}>Save</Button>
+                    <Button variant="contained" style={{ boxShadow: 'none', width: '9em', height: '3em', borderRadius: '100px', backgroundColor: '#44CA92', fontWeight: 'bold', marginTop: '1em', marginRight:'2em' }}>Save</Button>
                     <Button variant="outlined" style={{ boxShadow: 'none', width: '9em', height: '3em', borderRadius: '100px', backgroundColor: 'transpearent', fontWeight: 'bold', marginTop: '1em', color:'#44CA92', borderColor:'#44CA92' }}>Cancel</Button>
                 </div>
             </div>

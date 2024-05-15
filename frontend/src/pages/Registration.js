@@ -31,8 +31,8 @@ export default function () {
                             <FormLabel component="legend" style={{ textAlign: 'center', marginRight: '1em', fontWeight: 'bold', color: '#8EB48A' }}>I am:</FormLabel>
                             <FormControl component="fieldset">
                                 <RadioGroup row aria-label="gender" name="gender1">
-                                    <FormControlLabel value="female" control={<Radio />} label="Female" style={{ width: 'auto' }} />
-                                    <FormControlLabel value="male" control={<Radio />} label="Male" style={{ width: 'auto' }} />
+                                    <FormControlLabel value="female" control={<Radio />} label="Employer" style={{ width: 'auto' }} />
+                                    <FormControlLabel value="male" control={<Radio />} label="Employee" style={{ width: 'auto' }} />
                                 </RadioGroup>
                             </FormControl>
                             <Button variant='outlined' style={{backgroundColor: '#44CA92', color: 'white', fontSize: '1.5em', borderRadius: '100px', borderColor: 'transparent', marginTop: '1em' }}>Sign up</Button>
