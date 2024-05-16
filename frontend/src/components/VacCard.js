@@ -11,7 +11,7 @@ function VacCard({ jobName, description, salary, address }) {
                         {jobName}
                     </Typography>
                     <Typography variant="body1" component="div" style={{ marginTop: '1em', fontWeight: 'bolder' }}>
-                        {salary}
+                        {salary} $
                     </Typography>
                     <Typography variant="body1" component="div" style={{ marginTop: '1em', fontWeight: 'bolder'}}>
                         {address}

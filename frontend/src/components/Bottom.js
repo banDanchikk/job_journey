@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button, IconButton, Typography, Dialog, DialogTitle, D
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import logoImage from '../images/logo.png';
+import logoImage from '../images/logo2.png';
 
 function Bottom() {
     const [openDialog, setOpenDialog] = useState(false);

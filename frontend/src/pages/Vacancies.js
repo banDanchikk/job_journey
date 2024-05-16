@@ -7,7 +7,7 @@ import VacCard from "../components/VacCard";
 
 export default function () {
     const cityName ='Lviv';
-    const numOfJobs = 12345;
+    const numOfJobs = 1;
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -30,14 +30,12 @@ export default function () {
             <div style={{display:'flex', flexDirection:'row'}}>
               <div style={{marginLeft:'10em'}}>
                   <div style={{marginTop:'0.5em'}}>
-                      <Typography style={{fontSize:'1.5em', marginBottom:'0.5em'}}>{numOfJobs} jobs in <b>{cityName}</b></Typography>
+                      <Typography style={{fontSize:'1.5em', marginBottom:'0.5em'}}>{numOfJobs} job in <b>{cityName}</b></Typography>
                   </div>
-                  <VacCard jobName={'Job Name'} salary={2500} address={'вул. Богдана Хмельницького 124'} description={'Потрібна комунікабельна, активна людина для проведення ІТ навчання за готовою розробленою програмою. Нічого складного, але дуже цікаво. Головне, щоб було бажання працювати.РОБОТА В ОФІСІ, ведення ОНЛАЙН та ВЖИВУ занять.'}/>
-                  <VacCard jobName={'Job Name'} salary={2500} address={'вул. Богдана Хмельницького 124'} description={'Потрібна комунікабельна, активна людина для проведення ІТ навчання за готовою розробленою програмою. Нічого складного, але дуже цікаво. Головне, щоб було бажання працювати.РОБОТА В ОФІСІ, ведення ОНЛАЙН та ВЖИВУ занять.'}/>
-                  <VacCard jobName={'Job Name'} salary={2500} address={'вул. Богдана Хмельницького 124'} description={'Потрібна комунікабельна, активна людина для проведення ІТ навчання за готовою розробленою програмою. Нічого складного, але дуже цікаво. Головне, щоб було бажання працювати.РОБОТА В ОФІСІ, ведення ОНЛАЙН та ВЖИВУ занять.'}/>
+                  <VacCard jobName={'IT teacher'} salary={2500} address={'vul. Shevchenka, 10, m. Kiev, Ukraine, 01001'} description={'We need a sociable, active person to conduct IT training according to a ready-made developed program. Nothing complicated, but very interesting. The main thing is to have a desire to work. WORK IN THE OFFICE, conducting ONLINE and LIVE classes.'}/>
               </div>
 
-              <div style={{backgroundColor: 'white', width:'20%', borderRadius:'15px', padding: '1em', marginTop:'3em', marginRight:'10em', paddingLeft:'2em', position:'fixed', right: 0}}>
+              <div style={{backgroundColor: 'white', width:'20%', borderRadius:'15px', padding: '1em', marginTop:'3em', marginRight:'10em', paddingLeft:'2em', position:'absolute', right: 0}}>
                   <Typography style={{fontSize:'1.5em', fontWeight:'bold'}}>Filters</Typography>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <Typography style={{fontSize:'1em', fontWeight:'bolder', marginTop:'1em'}}>Working Type</Typography>
@@ -61,9 +59,9 @@ export default function () {
                       <MenuItem value="">
                         <em>None</em>
                       </MenuItem>
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      <MenuItem value={10}>Lviv</MenuItem>
+                      <MenuItem value={20}>Kyiv</MenuItem>
+                      <MenuItem value={30}>Odessa</MenuItem>
                     </Select>
                   </FormControl>
                   <Typography style={{fontSize:'1em', fontWeight:'bolder', marginTop:'1em'}}>Category</Typography>
@@ -79,9 +77,12 @@ export default function () {
                       <MenuItem value="">
                         <em>None</em>
                       </MenuItem>
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      <MenuItem value={10}>IT</MenuItem>
+                      <MenuItem value={20}>Design</MenuItem>
+                      <MenuItem value={30}>Busines</MenuItem>
+                      <MenuItem value={40}>Education</MenuItem>
+                      <MenuItem value={50}>Real estate</MenuItem>
+                      <MenuItem value={60}>Marketing</MenuItem>
                     </Select>
                   </FormControl>
               </div>

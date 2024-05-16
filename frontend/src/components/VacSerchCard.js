@@ -14,10 +14,19 @@ export default function VacSearchCard({ jobName, description, salary, address })
                     </div>
                 </div>
                 <div style={{ marginLeft: '2em' }}>
-                    <Typography style={{fontWeight:"bold"}} variant="h4" gutterBottom>{jobName}</Typography>
-                    <Typography variant="body1" gutterBottom>{description}</Typography>
-                    <Typography variant="h4" gutterBottom>{salary}</Typography>
-                    <Typography variant="body1" gutterBottom>{address}</Typography>
+                <Typography variant="h5" component="div" style={{ fontWeight: 'bold', fontSize:'2em' }}>
+                        {jobName}
+                    </Typography>
+                    <Typography  component="div" style={{ marginTop: '1em', fontWeight: 'bolder'}}>
+                        {address}
+                    </Typography>
+                    <Typography  component="div" style={{ marginTop: '1em', fontWeight: 'bolder', fontSize:'1.5em' }}>
+                        {salary} $
+                    </Typography>
+                    
+                    <Typography component="div" style={{ marginTop: '1em', width:'80%', fontSize:'1.3em'}}>
+                        {description}
+                    </Typography>
                 </div>
             </Paper>
         </div>

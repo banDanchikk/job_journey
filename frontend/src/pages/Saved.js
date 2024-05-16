@@ -9,7 +9,7 @@ export default function () {
             <Menu />
             <Typography variant="h3" component="div" style={{ fontSize: '2.5em', fontWeight: 'bolder', marginLeft: '1em', marginTop: '2.5em' }}>Saved Jobs</Typography>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:'2em' }}>
-                <SavedJob jobName={"Помічник харчового технолога в крафтовій сироварні"} description={"Пройти 5 стажувань до цього"}/>
+                <SavedJob jobName={"IT teacher"} description={"We need a sociable, active person to conduct IT training according to a ready-made developed program. Nothing complicated, but very interesting. The main thing is to have a desire to work. WORK IN THE OFFICE, conducting ONLINE and LIVE classes."}/>
             </div>
             
             <div style={{ marginTop: 'auto'}}>

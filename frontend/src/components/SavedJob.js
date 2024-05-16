@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function SavedJob({ jobName, description }) {
     return (
-        <Link to={`/categories`} style={{ textDecoration: 'none', width: '80%' }}>
+        <Link to={`/vivaserch`} style={{ textDecoration: 'none', width: '80%' }}>
             <Card variant="outlined" style={{ backgroundColor: 'white', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderRadius: '10px' }}>
                 <CardContent>
                     <Typography variant="h5" component="div" style={{ fontWeight: 'bold' }}>

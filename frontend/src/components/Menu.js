@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, IconButton, Avatar, Box, Menu, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
-import logoImage from '../images/logo.png';
+import logoImage from '../images/logo2.png';
 
 const settings = ['Account', 'Logout'];
 

@@ -14,21 +14,20 @@ export default function UserAccount() {
                     <div style={{ borderRadius: '15px', display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '1em', backgroundColor: 'white', marginTop: '6em', width: '50%', height: '4em', marginLeft: '2em'}}>
                         <div style={{ width: '100%' }}>
                             <Typography style={{ fontSize: '2em', fontWeight: 'bold' }}>Account Filling</Typography>
-                            <LinearProgress variant="determinate" value={50} style={{ height: '1em', width: '75%', borderRadius: '10px' }} />
+                            <LinearProgress variant="determinate" value={100} style={{ height: '1em', width: '75%', borderRadius: '10px' }} />
                         </div>
-                        <Typography style={{ alignSelf: 'center', marginRight: '1em', fontSize: '2em', fontWeight: 'bold' }}>50%</Typography>
+                        <Typography style={{ alignSelf: 'center', marginRight: '1em', fontSize: '2em', fontWeight: 'bold' }}>100%</Typography>
                     </div>
                     <Link to={`/edituser`} style={{ textDecoration: 'none' }}>
                         <Button variant="contained" style={{backgroundColor:'rgba(68, 202, 146, 0.42)', borderRadius:'100px', boxShadow: 'none', width: '12em', height:'5em', marginTop:'8em', color:'black', marginLeft: '5em', alignSelf:'center', marginRight:'13em'}}>Edit Profile</Button>
                     </Link>
                 </div>
                 <div style={{display: 'flex', flexDirection:'row'}}>
-                    <SearcherCard name ='My Name'/>
+                    <SearcherCard name ='John Doe' birthDate={'19.07.2005'} cityName={'Lviv'} address={'Horodotska street'} number={'+380662410786'} email={'useremail@gmail.com'} social={'instagram.com'}/>
                     <div style={{backgroundColor:'white', width:'30%', borderRadius: '15px', padding:'1em', margin:'2em'}}>
                         <Typography style={{ fontSize: '2em', fontWeight: 'bold', marginBottom: '0.5em'}}>My CVs:</Typography>
                         <MyCV cvName='Web-dev.pdf'/>
-                        <MyCV cvName='Web-dev.pdf'/>
-                        <MyCV cvName='Web-dev.pdf'/>
+                        <MyCV cvName='Python developer.pdf'/>
                     </div>
                 </div>
                 
